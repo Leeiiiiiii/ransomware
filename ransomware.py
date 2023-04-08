@@ -1,5 +1,11 @@
-import os
+import subprocess
+
+# Install required libraries
+subprocess.call(['pip', 'install', 'cryptography'])
+
+# Import required libraries
 from cryptography.fernet import Fernet
+import os
 
 # Generate a new encryption key
 key = Fernet.generate_key()
